@@ -22,7 +22,7 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, containerStyle]}>
       <Button
       color="orange"
       title="Click Me" onPress={handleBtnPress} />
@@ -30,6 +30,9 @@ export default function App() {
     </View>
   );
 }
+
+
+const containerStyle = {backgroundColor: "orange" };
 
 const styles = StyleSheet.create({
   container: {

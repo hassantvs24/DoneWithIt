@@ -7,14 +7,17 @@ export default function App() {
   const handlePress = () => console.log("Text Clicked.");
   const handleImagePress = () => console.log("Image Touch.");
   const handleBtnPress = () => {
-    Alert.alert("My Title", "My Message", [
-      {
-        text: "Yes", onPress: () => console.log("Yes")
-      },
-      {
-        text: "No", onPress: () => console.log("No")
-      }
-  ]);
+    //   Alert.alert("My Title", "My Message", [
+    //     {
+    //       text: "Yes", onPress: () => console.log("Yes")
+    //     },
+    //     {
+    //       text: "No", onPress: () => console.log("No")
+    //     }
+    // ]);
+
+    Alert.prompt("My Title", "My Message", (text) => console.log(text));
+
     console.log("Button Touch.");
   };
 

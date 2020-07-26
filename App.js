@@ -1,26 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableHighlight, Button, Alert } from 'react-native';
 
 export default function App() {
 
   const handlePress = () => console.log("Text Clicked.");
   const handleImagePress = () => console.log("Image Touch.");
+  const handleBtnPress = () => {
+    Alert.alert("My Title", "My Message", [
+      {
+        text: "Yes", onPress: () => console.log("Yes")
+      },
+      {
+        text: "No", onPress: () => console.log("No")
+      }
+  ]);
+    console.log("Button Touch.");
+  };
 
   return (
     <View style={styles.container}>
-      <Text numberOfLines={1} onPress={handlePress}>Hello World Nadu Pappa.</Text>
-      {/* <Image source={require('./assets/icon.png')} /> */}
-      <TouchableHighlight onPress={handleImagePress}>
-        <Image 
-        fadeDuration={1000}
-        blurRadius={0} 
-        source={{ 
-          width: 200,
-          height: 300,
-          uri : "https://picsum.photos/200/300" 
-          }} />
-      </TouchableHighlight>
+      <Button
+      color="orange"
+      title="Click Me" onPress={handleBtnPress} />
       <StatusBar style="auto" />
     </View>
   );

@@ -1,44 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar as Stbar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableHighlight, Button, Alert } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Image, Platform, TouchableOpacity, StatusBar } from 'react-native';
 
 export default function App() {
 
   const handlePress = () => console.log("Text Clicked.");
-  const handleImagePress = () => console.log("Image Touch.");
-  const handleBtnPress = () => {
-    //   Alert.alert("My Title", "My Message", [
-    //     {
-    //       text: "Yes", onPress: () => console.log("Yes")
-    //     },
-    //     {
-    //       text: "No", onPress: () => console.log("No")
-    //     }
-    // ]);
-
-    Alert.prompt("My Title", "My Message", (text) => console.log(text));
-
-    console.log("Button Touch.");
+  const handleImagePress = () => {
+    console.log(StatusBar.currentHeight);
   };
 
   return (
-    <View style={[styles.container, containerStyle]}>
-      <Button
-      color="orange"
-      title="Click Me" onPress={handleBtnPress} />
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Text numberOfLines={1} onPress={handlePress}>Hello World Nadu Pappa.</Text>
+      <TouchableOpacity onPress={handleImagePress}>
+        <Image source={{ 
+          width: 200,
+          height: 300,
+          uri : "https://picsum.photos/200/300" 
+          }} />
+      </TouchableOpacity>
+
+      <Stbar style="auto" />
+      
+    </SafeAreaView>
   );
 }
-
-
-const containerStyle = {backgroundColor: "orange" };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center'
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
   },
 });

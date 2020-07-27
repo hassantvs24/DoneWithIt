@@ -13,13 +13,8 @@ export default function App() {
       //flexWrap: 'wrap',
       alignContent: 'center'
       }}>
-        <View style={{ 
-          backgroundColor:'dodgerblue', 
-          //flex: 1, 
-          flexShrink: 1,
-          width: 400,
-          height:100}}></View>
-        <View style={{ backgroundColor:'gold', width: 100, height:100 }}></View>
+        <View style={{ backgroundColor:'dodgerblue', flexShrink: 1, width: 100, height:100}}></View>
+        <View style={{ backgroundColor:'gold', width: 100, height:100, top: 20, position: 'absolute' }}></View>
         <View style={{ backgroundColor:'tomato', width: 100, height:100 }}></View>
       </View>
       <Stbar style="auto" />

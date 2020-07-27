@@ -13,11 +13,9 @@ export default function App() {
       flexWrap: 'wrap',
       alignContent: 'center'
       }}>
-        <View style={{ backgroundColor:'dodgerblue', width: 100, height:100}}></View>
+        <View style={{ backgroundColor:'dodgerblue', flexGrow: 1, width: 100, height:100}}></View>
         <View style={{ backgroundColor:'gold', width: 100, height:100 }}></View>
         <View style={{ backgroundColor:'tomato', width: 100, height:100 }}></View>
-        <View style={{ backgroundColor:'gray', width: 100, height:100 }}></View>
-        <View style={{ backgroundColor:'teal', width: 100, height:100 }}></View>
       </View>
       <Stbar style="auto" />
     </SafeAreaView>

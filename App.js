@@ -9,11 +9,15 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <View style={{ backgroundColor:'#fff', flex: 1, flexDirection: 'row', 
       justifyContent: 'center', //main
-      alignItems: 'center' //secondary
+      alignItems: 'center', //secondary
+      flexWrap: 'wrap',
+      alignContent: 'center'
       }}>
-        <View style={{ backgroundColor:'dodgerblue', width: 100, height:100, alignSelf: 'flex-start' }}></View>
+        <View style={{ backgroundColor:'dodgerblue', width: 100, height:100}}></View>
         <View style={{ backgroundColor:'gold', width: 100, height:100 }}></View>
         <View style={{ backgroundColor:'tomato', width: 100, height:100 }}></View>
+        <View style={{ backgroundColor:'gray', width: 100, height:100 }}></View>
+        <View style={{ backgroundColor:'teal', width: 100, height:100 }}></View>
       </View>
       <Stbar style="auto" />
     </SafeAreaView>

@@ -14,7 +14,8 @@ export default function App() {
         shadowColor: 'gray',
         shadowOffset: { width: 10, height: 10 },
         shadowOpacity: 1,
-        shadowRadius: 10
+        shadowRadius: 10,
+        elevation: 30 //only for android
         
         }}>
 

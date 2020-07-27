@@ -3,20 +3,15 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
+import AppText from './app/components/AppText';
+import Heading from './app/components/Heading';
+import { Octicons } from '@expo/vector-icons';
 
 export default function App() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text style={{ 
-        //fontFamily: 'Robot',
-        fontStyle: 'italic',
-        fontWeight: "800",
-        color: 'red',
-        fontSize: 30,
-        textDecorationLine: 'line-through'
-       }} >
-         Hello World
-         </Text>
+       <Heading>Heading 1</Heading>
+       <AppText><Octicons name="mail" size={200} color="dodgerblue" /></AppText>
     </View>
   );
 }

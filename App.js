@@ -11,9 +11,10 @@ export default function App() {
         backgroundColor: "dodgerblue",
         height: 100,
         width: 100,
-        borderWidth: 10,
-        borderColor: 'royalblue',
-        borderRadius: 50
+        shadowColor: 'gray',
+        shadowOffset: { width: 10, height: 10 },
+        shadowOpacity: 1,
+        shadowRadius: 10
         
         }}>
 

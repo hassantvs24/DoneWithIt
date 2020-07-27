@@ -1,32 +1,15 @@
 import { StatusBar as Stbar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Platform, StatusBar } from 'react-native';
+import { View } from 'react-native';
+import WelcomeScreen from './app/screens/WelcomeScreen';
+import ViewImageScreen from './app/screens/ViewImageScreen';
 
 export default function App() {
 
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={{ backgroundColor:'#fff', flex: 1, flexDirection: 'row', 
-      justifyContent: 'center', //main
-      alignItems: 'center', //secondary
-      //flexWrap: 'wrap',
-      alignContent: 'center'
-      }}>
-        <View style={{ backgroundColor:'dodgerblue', flexShrink: 1, width: 100, height:100}}></View>
-        <View style={{ backgroundColor:'gold', width: 100, height:100, top: 20, position: 'absolute' }}></View>
-        <View style={{ backgroundColor:'tomato', width: 100, height:100 }}></View>
-      </View>
-      <Stbar style="auto" />
-    </SafeAreaView>
+      <ViewImageScreen />
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
-  },
-}); 
   

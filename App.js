@@ -3,7 +3,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
-import AppText from './app/components/AppText';
+import AppText from './app/components/AppText.ios';
 import Heading from './app/components/Heading';
 import { Octicons } from '@expo/vector-icons';
 

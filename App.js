@@ -1,20 +1,20 @@
 import { StatusBar as Stbar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Dimensions, Text, View, SafeAreaView, Platform, StatusBar } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import { StyleSheet, Text, View, SafeAreaView, Platform, StatusBar } from 'react-native';
 
 export default function App() {
 
-  //const handlePress = () => console.log("Text Clicked.");
-
-  //console.log(Dimensions.get('window'));
-  console.log(useDeviceOrientation());
-
-  const {landscape} = useDeviceOrientation();
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{ backgroundColor:'dodgerblue', height: landscape ? '100%':'30%', width:'100%' }}></View>
+      <View style={{ backgroundColor:'#fff', flex: 1, flexDirection: 'row', 
+      justifyContent: 'center', //main
+      alignItems: 'center' //secondary
+      }}>
+        <View style={{ backgroundColor:'dodgerblue', width: 100, height:100, alignSelf: 'flex-start' }}></View>
+        <View style={{ backgroundColor:'gold', width: 100, height:100 }}></View>
+        <View style={{ backgroundColor:'tomato', width: 100, height:100 }}></View>
+      </View>
       <Stbar style="auto" />
     </SafeAreaView>
   );

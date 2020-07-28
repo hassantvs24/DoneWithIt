@@ -11,7 +11,7 @@ export default function App() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
        <Heading>Heading 1</Heading>
-       <AppText>Nazmul<Octicons name="mail" size={200} color="dodgerblue" /></AppText>
+       <AppText><Octicons name="mail" size={200} color="dodgerblue" /></AppText>
     </View>
   );
 }

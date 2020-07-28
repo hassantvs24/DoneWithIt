@@ -5,7 +5,7 @@ import styles from '../components/style';
 
 const WelcomeScreen = () => {
     return (
-        <ImageBackground blurRadius={10} style={styles.background}source={require("../assets/bg-welcome.jpg")}>
+        <ImageBackground blurRadius={5} style={styles.background}source={require("../assets/bg-welcome.jpg")}>
             <View style={styles.logoContainer}>
                 <Image style={styles.logo} source={require('../assets/logo.png')} />
                 <Text style={styles.tagLine}>Selling Items</Text>

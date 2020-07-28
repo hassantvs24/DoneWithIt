@@ -8,33 +8,43 @@ const styles = StyleSheet.create({
         fontSize: 20
     },
 
+    background : {
+        flex: 1,
+        justifyContent: 'flex-end',
+        alignItems: 'center'
+    },
+
+    logoContainer:{
+        position: 'absolute',
+        top: 70,
+        alignItems: 'center'
+
+    },
+
     heading: {
         fontSize: 30,
         fontWeight: 'bold',
         color: 'black',
     },
 
-    loginButton: {
-        backgroundColor: colors.primary,
-        borderRadius: 25,
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 15,
+    background : {
+        flex: 1,
+        justifyContent: 'flex-end',
+        alignItems: 'center'
+    },
+    logo: {
+        width: 100,
+        height: 100,
+    },
+    buttonContainer: {
+        padding: 20,
         width: '100%'
     },
-    registerButton: {
-        backgroundColor: colors.secondary,
-        borderRadius: 25,
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 15,
-        width: '100%'
-    },
-    btnText: {
-        color: colors.white,
-        fontSize: 18,
+
+    tagLine: {
+        fontSize: 25,
         fontWeight: 'bold',
-        textTransform: 'capitalize'
+        paddingVertical: 20
     }
 });
 

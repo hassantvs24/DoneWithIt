@@ -1,25 +1,33 @@
 import React from 'react';
-import { View, StyleSheet, Image } from 'react-native';
+import Swipeable from 'react-native-gesture-handler/Swipeable';
+import { View, StyleSheet, Image, TouchableHighlight } from 'react-native';
 import colors from '../config/colors';
 import AppText from './AppText.android';
 
-const ListItem = ({title, subTitle, image}) => {
+
+const ListItem = ({title, subTitle, image, IconComponent, onPress, renderRightActions}) => {
     return (
-        <View style={styles.container}>
-            <Image style={styles.image} source={image} />
-            <View style={styles.userContainer}>
-                <AppText style={styles.title}>{title}</AppText>
-                <AppText style={styles.subTitle}>{subTitle}</AppText>
-            </View>
-            
-       </View> 
+        <Swipeable renderRightActions={renderRightActions}>
+            <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
+                <View style={styles.container}>
+                    {IconComponent}
+                    {image && <Image style={styles.image} source={image} />}
+                    <View style={styles.userContainer}>
+                        <AppText style={styles.title}>{title}</AppText>
+                        {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
+                    </View>
+                </View> 
+            </TouchableHighlight>
+        </Swipeable>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        marginVertical: 5
+        marginBottom: 1,
+        padding: 10,
+        backgroundColor: colors.white
     },
     image: {
         width: 70,
@@ -27,8 +35,9 @@ const styles = StyleSheet.create({
         borderRadius: 35
     },
     userContainer: {
-        marginVertical: 7,
+        marginVertical: 1,
         paddingLeft: 20,
+        justifyContent: 'center'
     },
 
     title: {
@@ -39,6 +48,7 @@ const styles = StyleSheet.create({
 
     subTitle: {
         color: colors.medium,
+        fontSize: 16
     },
 });
 

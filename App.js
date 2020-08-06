@@ -1,10 +1,15 @@
-import React from 'react';
-import AccountScreen from './app/screens/AccountScreen';
-import ListingScreen from './app/screens/ListingScreen';
+import React, {useState} from 'react';
+import Screen from './app/components/Screen';
+import { TextInput, Text, Switch } from 'react-native';
+import AppTextInput from './app/components/AppTextInput';
 
 export default function App() {
+  const [isNew, setIsNew] = useState('');
+
   return (
-    <ListingScreen />
+    <Screen>
+      <Switch value={isNew} onValueChange={newValue => setIsNew(newValue)} />
+    </Screen>
   );
 }
 

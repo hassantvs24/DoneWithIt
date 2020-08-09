@@ -4,7 +4,7 @@ import colors from '../../config/colors';
 
 const styles = StyleSheet.create({
     text: {
-        color: 'blue',
+        color: '#333',
         fontSize: 20
     },
 

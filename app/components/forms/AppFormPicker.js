@@ -10,9 +10,13 @@ const AppFormPicker = ({ items, name, placeholder }) => {
     return (
         <> 
             <AppPicker 
+                icon="view-list"
                 items={items}
                 onSelectItem={(item) => setFieldValue(name, item)}
+                placeholder={placeholder}
+                selectedItem={values[name]}
               />
+              <ErrorMessage error={errors[name]} visible={touched[name]} />
         </>
     );
 }

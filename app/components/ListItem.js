@@ -1,6 +1,7 @@
 import React from 'react';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 import { View, StyleSheet, Image, TouchableHighlight } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import colors from '../config/colors';
 import AppText from './AppText.android';
 
@@ -13,9 +14,10 @@ const ListItem = ({title, subTitle, image, IconComponent, onPress, renderRightAc
                     {IconComponent}
                     {image && <Image style={styles.image} source={image} />}
                     <View style={styles.userContainer}>
-                        <AppText style={styles.title}>{title}</AppText>
-                        {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
+                        <AppText style={styles.title} numberOfLines={1} >{title}</AppText>
+                        {subTitle && <AppText style={styles.subTitle}  numberOfLines={2}>{subTitle}</AppText>}
                     </View>
+                    <MaterialCommunityIcons name="chevron-right" size={24} color="black" />
                 </View> 
             </TouchableHighlight>
         </Swipeable>
@@ -24,6 +26,7 @@ const ListItem = ({title, subTitle, image, IconComponent, onPress, renderRightAc
 
 const styles = StyleSheet.create({
     container: {
+        alignItems: 'center',
         flexDirection: 'row',
         marginBottom: 1,
         padding: 10,
@@ -35,6 +38,7 @@ const styles = StyleSheet.create({
         borderRadius: 35
     },
     userContainer: {
+        flex: 1,
         marginVertical: 1,
         paddingLeft: 20,
         justifyContent: 'center'

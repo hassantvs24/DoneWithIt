@@ -9,20 +9,20 @@ import ListItemDeleteAction from '../components/ListItemDeleteAction';
 const initialMessages = [
     {
         id: 1,
-        title: 'Lorem Ipsum is simply',
-        description: 'Comes from a line in section 1.10.32',
+        title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
+        description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
         image: require('../assets/msg.jpg')
     },
     {
         id: 2,
         title: 'Contrary to popular belief',
-        description: 'If you are going to use a passage of Lorem Ipsum',
+        description: 'If you are going to use',
         image: require('../assets/myimg.jpg')
     },
     {
         id: 3,
         title: 'There are many variations',
-        description: 'Lorem Ipsum is that it has a more-or-less normal',
+        description: 'Lorem Ipsum is that it has',
         image: require('../assets/cms.jpg')
     },
 ];

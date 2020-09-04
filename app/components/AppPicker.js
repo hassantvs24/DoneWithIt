@@ -1,18 +1,27 @@
 import React, {useState} from 'react';
-import { View, Picker, StyleSheet, TouchableWithoutFeedback, Modal, Button, FlatList } from "react-native";
+import { View, StyleSheet, TouchableWithoutFeedback, Modal, Button, FlatList } from "react-native";
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 import colors from '../config/colors';
 import AppText from './AppText.android';
 import Screen from './Screen';
 import PickerItem from './PickerItem';
 
-const AppPicker = ({ icon, items, onSelectItem, placeholder, selectedItem }) => {
+const AppPicker = ({ 
+        icon, 
+        items, 
+        onSelectItem, 
+        placeholder, 
+        numberOfColumns=1, 
+        PickerItemComponent = PickerItem, 
+        selectedItem, 
+        width="100%" 
+    }) => {
     const [modalVisible, setModalVisible] = useState(false);
 
     return (
             <>
                 <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
-                    <View style={styles.container}>
+                    <View style={[styles.container, {width}]}>
                         {icon && <MaterialCommunityIcons name={icon} size={25} color={colors.medium}  style={styles.icon} />}
                         {selectedItem ? (<AppText style={styles.text}>{selectedItem.label}</AppText>) : (<AppText style={styles.placeholder}>{placeholder}</AppText>)}
                         
@@ -25,9 +34,13 @@ const AppPicker = ({ icon, items, onSelectItem, placeholder, selectedItem }) => 
 
                         <FlatList data={items} 
                             keyExtractor={item => item.value.toString()}
-                            renderItem={({item}) => <PickerItem label={item.label} onPress={() => {
-                                setModalVisible(false);
-                                onSelectItem(item);
+                            numColumns={numberOfColumns}
+                            renderItem={({item}) => <PickerItemComponent 
+                                item={item}
+                                label={item.label} 
+                                onPress={() => {
+                                    setModalVisible(false);
+                                    onSelectItem(item);
                             }} />}
                         />
 
@@ -43,7 +56,6 @@ const styles = StyleSheet.create({
         backgroundColor: colors.light,
         borderRadius: 25,
         flexDirection: "row",
-        width: '100%',
         padding: 15,
         marginVertical: 10
     },

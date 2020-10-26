@@ -5,7 +5,9 @@ import { WebView } from 'react-native-webview';
 const WebViewScreen = () => {
     return (
         <Screen>
-            <WebView source={{ uri: 'https://fleet.mrsnetworkbd.com/' }} />
+            <WebView 
+                source={{ uri: 'https://almodinagroc.com/' }}
+             />
         </Screen>
     );
 }
